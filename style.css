@@ -1,0 +1,36 @@
+#load-btn{
+    color: white;
+    background-color: rgba(70, 70, 214, 0.808);
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    margin: 20px;
+    padding: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.data-container{
+    margin: 20px;
+    padding: 40px;
+}
+
+#country-info-section{
+    display: none;
+    grid-gap: 40px;
+    grid-template-columns: repeat(4, 1fr)
+}
+
+#extra-info-section{
+    display: none;
+    background-color: paleturquoise;
+    text-align: center;
+    margin: 50px;
+    padding: 50px;
+}
+
+.country-info{
+    background-color: paleturquoise;
+    text-align: center;
+    padding: 10px;
+}
