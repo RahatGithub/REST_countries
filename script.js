@@ -23,17 +23,17 @@ function showData(data){
 
     for(let i=0; i<data.length; i++){
         const div = document.createElement('div');
-        const h1 = document.createElement('h1');
-        const h4 = document.createElement('h4');
-        h1.innerText = data[i].name;
+        const name = data[i].name;
+        let capital = "";
         if (data[i].capital){
-            h4.innerText = data[i].capital;
+            capital = data[i].capital;
         }
-        div.appendChild(h1);
-        div.appendChild(h4);
+        div.innerHTML = `
+            <h1>${name}</h1>
+            <h4>${capital}</h4>
+        `
         section.appendChild(div);
         div.className = 'country-info';
-        div.style.cursor = 'pointer';
         //For showing extra info
         div.addEventListener('click', function(){
             section.style.display = 'none';
@@ -48,22 +48,17 @@ function showExtra(country){
     section.style.display = 'block';
     section.innerText = "";
     const div = document.createElement('div');
-    const name = document.createElement('h1');
-    const region = document.createElement('h3');
-    const subregion = document.createElement('h3');
-    const area = document.createElement('h3');
-    const population = document.createElement('h3');
-    name.innerText = "Name: " + country.name;
-    region.innerText = "Region: " + country.region;
-    subregion.innerText = "Subregion: " + country.subregion;
-    area.innerText = "Area: " + country.area + " sq km";
-    population.innerText = "Population: " + country.population;
-    div.appendChild(name);
-    div.appendChild(region);
-    div.appendChild(subregion);
-    div.appendChild(area);
-    div.appendChild(population);
+    const name = country.name;
+    const region = country.region;
+    const subregion = country.subregion;
+    const area = country.area;
+    const population = country.population;
+    div.innerHTML = `
+        <h1>Name: ${name}</h1>
+        <h3>Region: ${region}</h3>
+        <h3>Subregion: ${subregion}</h3>
+        <h3>Area: ${area} sq km</h3>
+        <h3>Population: ${population}</h3>
+    `
     section.appendChild(div);
-    // console.log(country);
-    //region, subregion, area, population
 }
